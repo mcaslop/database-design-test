@@ -5,7 +5,7 @@
 */
 
 -- 1. create database
-CREATE MyDbTest
+CREATE DATABASE MyDbTest;
 GO
 
 USE MyDbTest
@@ -88,26 +88,26 @@ ALTER TABLE MyDbTest.UserRoles
 ALTER TABLE Departments
 	ADD CreatedOn DATE DEFAULT (GETDATE())
 ALTER TABLE Departments
-	LastUpdatedOn DATE DEFAULT (GETDATE())
+	ADD LastUpdatedOn DATE DEFAULT (GETDATE())
 GO
 
 ALTER TABLE Users
 	ADD CreatedOn DATE DEFAULT (GETDATE())
 ALTER TABLE Users
-	LastUpdatedOn DATE DEFAULT (GETDATE())
+	ADD LastUpdatedOn DATE DEFAULT (GETDATE())
 GO
 
 ALTER TABLE Roles
 	ADD CreatedOn DATE DEFAULT (GETDATE())
 ALTER TABLE Roles
-	LastUpdatedOn DATE DEFAULT (GETDATE())
+	ADD LastUpdatedOn DATE DEFAULT (GETDATE())
 GO
 
 
 ALTER TABLE UserRoles
 	ADD CreatedOn DATE DEFAULT (GETDATE())
 ALTER TABLE UserRoles
-	LastUpdatedOn DATE DEFAULT (GETDATE())
+	ADD LastUpdatedOn DATE DEFAULT (GETDATE())
 GO
 
 
@@ -139,15 +139,15 @@ CREATE TABLE Registry (
 -- That way we don't need to phyisically delete the record.
 
 ALTER TABLE Users
-	IsDeleted BIT DEFAULT (0) -- 0: No, it is not deleted | 1: Yes, it is deleted
+	ADD IsDeleted BIT DEFAULT (0) -- 0: No, it is not deleted | 1: Yes, it is deleted
 GO
 
 ALTER TABLE Roles
-	IsDeleted BIT DEFAULT (0) -- 0: No, it is not deleted | 1: Yes, it is deleted
+	ADD IsDeleted BIT DEFAULT (0) -- 0: No, it is not deleted | 1: Yes, it is deleted
 GO
 
 ALTER TABLE UserRoles
-	IsDeleted BIT DEFAULT (0) -- 0: No, it is not deleted | 1: Yes, it is deleted
+	ADD IsDeleted BIT DEFAULT (0) -- 0: No, it is not deleted | 1: Yes, it is deleted
 GO
 -- * i'm not adding a new column for the Departments as seems to be
 --  that the Department Status (IsActive) column purpose is the same, 
